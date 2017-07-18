@@ -25,21 +25,20 @@ The goals / steps of this project are the following:
 
 
 My pipeline consists of 5 steps. 
-![Original](start.png)
-1. Convert image to grayscale with the build in function.
-![Grayscale](gray.png)
-1. Smoothing out noise by using Gaussian Blur algorithm
-![Gaussian](gaussian.png)
-1. Canny Edge detection
-![Canny Edge](canny.png)
-1. Masking the region of interest
-![Region of interrst](region.png)
-1. Run Hough line algorithm to find lines in the image
-![Hough](hough.png)
 
-1. Do line classification: Calculate the slope of the lines, choose the two highest slopes left and right. Only choose lines that have are within 80% of the slope of the highes and lowest slope.
-1. Calculate mean slope and intercept and draw line between highest point and lower edge of the image.
-1. Overlay with original picture. 
+Step | Image
+---- | -----
+Start | ![Original](start.png)
+1. Convert image to grayscale with the build in function | ![Grayscale](gray.png)
+1. Smoothing out noise by using Gaussian Blur algorithm | ![Gaussian](gaussian.png)
+1. Canny Edge detection | ![Canny Edge](canny.png)
+1. Masking the region of interest | ![Region of interrst](region.png)
+1. Run Hough line algorithm to find lines in the image | ![Hough](hough.png)
+
+
+Do line classification: Calculate the slope of the lines, choose the two highest slopes left and right. Only choose lines that have are within 80% of the slope of the highes and lowest slope.
+Calculate mean slope and intercept and draw line between highest point and lower edge of the image.
+Overlay with original picture. 
 
 First, I converted the images to grayscale, then I .... 
 
