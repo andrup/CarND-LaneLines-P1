@@ -1,14 +1,7 @@
 # **Finding Lane Lines on the Road** 
 
-## Writeup Template
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
----
-
-**Finding Lane Lines on the Road**
-
-The goals / steps of this project are the following:
+### The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
 * Reflect on your work in a written report
 
@@ -19,45 +12,45 @@ The goals / steps of this project are the following:
 
 ---
 
-### Reflection
+## Reflection
 
 ### 1. Description of the imagae processing pipeline. 
 
-
 My pipeline consists of 5 steps. 
 
-Step | Image
+Step  | Image
 ---- | -----
 Start | ![Original](start.png)
 1. Convert image to grayscale with the build in function | ![Grayscale](gray.png)
-1. Smoothing out noise by using Gaussian Blur algorithm | ![Gaussian](gaussian.png)
-1. Canny Edge detection | ![Canny Edge](canny.png)
-1. Masking the region of interest | ![Region of interrst](region.png)
-1. Run Hough line algorithm to find lines in the image | ![Hough](hough.png)
+2. Smoothing out noise by using Gaussian Blur algorithm | ![Gaussian](gaussian.png)
+3. Canny Edge detection | ![Canny Edge](canny.png)
+4. Masking the region of interest | ![Region of interrst](region.png)
+5. Run Hough line algorithm to find lines in the image | ![Hough](hough.png)
 
-
-Do line classification: Calculate the slope of the lines, choose the two highest slopes left and right. Only choose lines that have are within 80% of the slope of the highes and lowest slope.
-Calculate mean slope and intercept and draw line between highest point and lower edge of the image.
-Overlay with original picture. 
-
-First, I converted the images to grayscale, then I .... 
-
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-
-![alt text][image1]
+6. I modified the draw_lines() function to calculate the slope for all lines and the intersection with the y-axis.
+All lines are classified into left and right lines and the minimum and maximum slope is saved.
+Only lines that are within a threshold of 80% of the slope are taken into account, so that single random lines making "noise" are dropped.
+The average slope and intersection with y-axis are calculated.
+Then a line has been drawn between the highest point (smallest y coordinates) and lower edge of the image (biggest y-coordinate, y-size of the image).
+The 2 lines are overlayed onto the source image.
 
 
 ### 2. Identify potential shortcomings with your current pipeline
 
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
+One potential shortcoming would be what would happen when there is a zebra crossing or rails on street.
+The line detection would not work properly. If there is snow on the road the contract would be too small to recognize the lanes and lines.
+The curves in the challenge video are sharper, that makes the detected line less and shorter.
 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+A possible improvement would be to enhance the contract of the grayscaled images. 
+Lines could be better detected then, the contra
+st between yellow and the bright gray road seems to be too small.
+Another improvement could be to deal with sharp curves. The lanes in the previous examples where quite straight.
 
-Another potential improvement could be to ...
+
+
+
+
+
