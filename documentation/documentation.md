@@ -29,26 +29,25 @@ Run Hough line algorithm to find lines in the image | ![Hough](hough.png)
 
 I modified the draw_lines() function to calculate the slope for all lines and the intersection with the y-axis.
 All lines are classified into left and right lines and the minimum and maximum slope is saved.
-Only lines that are within a threshold of 80% of the slope are taken into account, so that single random lines making "noise" are dropped.
-The average slope and intersection with y-axis are calculated.
-Then a line has been drawn between the highest point (smallest y coordinates) and lower edge of the image (biggest y-coordinate, y-size of the image).
+Only those lines within an 80% threshold of the slope are taken into account, so that single random lines making "noise" are dropped.
+The average slope and intersection with the y-axis are calculated.
+Then a line has been drawn between the highest point (smallest y coordinates) and the lower edge of the image (biggest y-coordinate, y-size of the image).
 The 2 lines are overlayed onto the source image.
 
 
 ### 2. Identify potential shortcomings with your current pipeline
 
-* One potential shortcoming would be what would happen when there is a **zebra crossing**
-* or **rails** on street. The line detection would not work properly. 
-* If there is **snow** on the road the contract would be too small to recognize the lanes and lines.
-* In the challenge video are **sharper curves**. That makes the algorithm to detect less and shorter lines.
+* A potential shortcoming is the interference of **zebra crossings** or **tram-rails** on the line detection algorithm.
+* If there is **snow** on the road the contrast would be too small to recognize the lanes and lines.
+* In the challenge video there are **sharper curves** than in the first video. This means that the algorithm will detect fewer and shorter lines.
 
 
 ### 3. Suggest possible improvements to your pipeline
 
 * A possible improvement would be to enhance the **contrast** of the grayscaled images. 
-Lines could be better detected then, the contra
-st between yellow and the bright gray road seems to be too small.
-* Another improvement could be to deal with sharp curves. The lanes in the previous examples where quite straight. **Parameter tuning** might do the trick.
+Lines could be better detected then, the contrast between yellow and the bright gray road seems to be too small.
+* Parameter tuning could help improve the lane detection on sharp curves
+
 
 
 
