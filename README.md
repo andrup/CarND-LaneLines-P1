@@ -20,12 +20,12 @@ My pipeline consists of 5 steps.
 
 Step  | Image
 ---- | -----
-Start | ![Original](start.png)
-Convert image to grayscale with the build in function | ![Grayscale](gray.png)
-Smoothing out noise by using Gaussian Blur algorithm | ![Gaussian](gaussian.png)
-Canny Edge detection | ![Canny Edge](canny.png)
-Masking the region of interest | ![Region of interrst](region.png)
-Run Hough line algorithm to find lines in the image | ![Hough](hough.png)
+Start | ![Original](documentation/start.png)
+Convert image to grayscale with the build in function | ![Grayscale](documentation/gray.png)
+Smoothing out noise by using Gaussian Blur algorithm | ![Gaussian](documentation/gaussian.png)
+Canny Edge detection | ![Canny Edge](documentation/canny.png)
+Masking the region of interest | ![Region of interrst](documentation/region.png)
+Run Hough line algorithm to find lines in the image | ![Hough](documentation/hough.png)
 
 I modified the draw_lines() function to calculate the slope for all lines and the intersection with the y-axis.
 All lines are classified into left and right lines and the minimum and maximum slope is saved.
